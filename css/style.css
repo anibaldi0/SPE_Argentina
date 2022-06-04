@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+:root{
+    --padding-container: 80px 0;
+}
+
+.container{
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+    padding:var(--padding-container);
+}
+.hero{
+    min-height: 100hv;
+    position: relative;
+}
+
+.hero__nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hero__logo{
+    width: 45%;
+    max-width: 160px;
+}
+
+.logo{
+    width: 100%;
+    display: block;
+}
+
+.hero__cta{
+    text-decoration: none;
+    font-weight: 600;
+    box-shadow: 10 10 10px;
+}
