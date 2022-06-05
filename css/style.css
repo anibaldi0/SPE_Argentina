@@ -51,4 +51,11 @@
     color: brown;
 }
 
+.menu__icon img{
+    width: 40px;
+    height: 40px;
+}
 
+.menu__icon, #check{
+    display: none;
+}
