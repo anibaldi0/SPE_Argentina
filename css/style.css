@@ -1,14 +1,15 @@
 *{
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 :root{
-    --padding-container: 80px 0;
+    --padding-container: 10px 0;
 }
 
 .container{
     width: 90%;
-    max-width: 1200px;
+    max-width: 100%;
     margin: 0 auto;
     overflow: hidden;
     padding:var(--padding-container);
@@ -19,23 +20,24 @@
 }
 
 .hero__nav{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: flex; /* para que los elementos se pongan al lado del otro */
+    justify-content: space-between; /* que se peguen a las esquinas */
+    align-items: center; /* que se centren verticalmente */
 }
 
 .hero__logo{
     width: 45%;
     max-width: 160px;
+    min-width: 100px;
 }
 
 .logo{
     width: 100%;
-    display: block;
+    display: block; /* para quitar el margen que tienen x defecto las imagenes */
 }
 
 .hero__cta{
+    color: darkblue;
     text-decoration: none;
     font-weight: 600;
-    box-shadow: 10 10 10px;
 }
