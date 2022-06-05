@@ -36,8 +36,19 @@
     display: block; /* para quitar el margen que tienen x defecto las imagenes */
 }
 
-.hero__cta{
-    color: darkblue;
-    text-decoration: none;
-    font-weight: 600;
+.hero__nav ul{
+    display: flex; /* las palabras se pongan una al lado de la otra */
+    color: darkblue; /* pintamos las letras de la lista */
+    font-weight: 600; /* engrosamos las letras de la lista */
+    list-style: none; /* quitamos los puntos de la lista */
 }
+
+.hero__nav li{
+    margin-right: 1.5rem;
+}
+
+.hero__nav li:hover{
+    color: brown;
+}
+
+
