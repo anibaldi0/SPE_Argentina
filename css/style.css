@@ -27,28 +27,31 @@
 
 .hero__logo{
     width: 45%;
-    max-width: 160px;
-    min-width: 100px;
+    max-width: 180px;
+    min-width: 160px;
 }
 
 .logo{
     width: 100%;
     display: block; /* para quitar el margen que tienen x defecto las imagenes */
+    padding-right: 30px;
 }
 
 .hero__nav ul{
     display: flex; /* las palabras se pongan una al lado de la otra */
+    font-family: Arial, Helvetica, sans-serif;
     color: darkblue; /* pintamos las letras de la lista */
-    font-weight: 600; /* engrosamos las letras de la lista */
+    font-weight: bold; /* engrosamos las letras de la lista */
     list-style: none; /* quitamos los puntos de la lista */
 }
 
 .hero__nav li{
-    margin-right: 1.5rem;
+    margin-right: 1.5rem; /* separacion entre palabras */
+    text-align: center; /* centrar las palabras seguidas */
 }
 
 .hero__nav li:hover{
-    color: brown;
+    color: red;
 }
 
 .menu__icon img{
@@ -58,4 +61,38 @@
 
 .menu__icon, #check{
     display: none;
+}
+
+@media (max-width:968px){
+    .checkbtn{
+        display: block;
+    }
+    .menu__icon{
+        display: block;
+        position: fixed;
+        top: 40px;
+        right: 40px;
+    }
+    .hero__nav ul{
+        display: block; /* para que se muestre en columna */
+        position: fixed;
+        top: 130px;
+        height: 500px;
+        left: -100%; /* Desplaza el menu fuera de la pantalla para que desaparezca */
+        background: #222;
+        width: 100%;
+        /* height: 100vh; */
+        right: 0; /* para que se alinee a la derecha */
+        color: aqua;
+    }
+    .hero__nav ul li {
+        padding: 1.5rem; /* para que haya separacion entre palabras del menu */
+        display: flex;
+        justify-content: center;
+        margin: 0;
+    }
+    #check:checked ~ ul { /* con el simbolo equivalencia seleccionamos todos los elem que hay dentro del contenedor padre */
+        left: 0; /* hacemos que el menu vuelva dentro de la pantalla */
+    }
+
 }
