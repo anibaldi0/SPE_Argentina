@@ -63,6 +63,10 @@
     display: none;
 }
 
+.hero__cta{
+    text-decoration: none;
+}
+
 @media (max-width:968px){
     .checkbtn{
         display: block;
