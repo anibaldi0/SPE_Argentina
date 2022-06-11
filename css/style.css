@@ -1,11 +1,16 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Poppins:wght@700&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+    text-decoration: none;
 }
-:root{
+/* :root{
     --padding-container: 10px 0;
-}
+} */
 
 .container{
     width: 90%;
@@ -14,18 +19,73 @@
     overflow: hidden;
     padding:var(--padding-container);
 }
-.hero{
+.menu{
+    width: 100%;
+    height: 140px;
     min-height: 100hv;
     position: relative;
+    background: rgb(0, 15, 147);
+    padding: 0px 10px; /* padding de 20px para que el logo no se pegue tanto al borde cuando se hace responsive*/
+    margin: auto;
 }
 
-.hero__nav{
-    display: flex; /* para que los elementos se pongan al lado del otro */
+nav{
+    height: 100%; /* para que el texto se centre horizontalmente */
+}
+
+nav > ul{ /* el selector > se usa para indicar que las modif solo sean para el ul inmediato al nav y no a otro ul */
+    height: 100%; /* para que el texto se centre horizontalmente */
+    display: flex;
+    position: relative; /* para que el submenu se relacione al padre */
+}
+
+nav > ul > li{
+    height: 100%;
+    list-style: none;
+    
+}
+
+nav > ul > li > a{
+    width: 100%;
+    height: 100%; /* para que el texto se centre horizontalmente */
+    display: flex; /* para que el texto se posicione uno al lado del otro */
+    align-items: center; /* centrado vertical del texto */
+    justify-content: center; /* centrado horizontal del texto */
+    text-align: center; /* justificado central del texto */
+    padding: 14px;
+    color: white;
+    text-transform: uppercase;
+    font-size: 14px;
+    transition: all 300ms ease;
+}
+
+nav > ul > li > a:hover{
+    transform: scale(1.1); /* para que el texto crezca un poco al pasar el cursor x encima */
+    background: rgb(0, 50, 150)
+}
+ /* submenu */
+.submenu__cta--styles{
+    width: 200px;
+    display: flex;
+    flex-direction: column; /* para asegurarnos que el texto va uno abajo del otro */
+    background: #fff;
+    position: absolute; 
+    top: 90px;
+    left: -5px; /* para que este levemente desplazado a la izquierda */
+    padding: 14px 0px; 
+    visibility: hidden; /* para que este oculto el submenu */
+    opacity: 0; 
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5 );
+    z-index: 10;
+}
+
+.menu__nav{
+    display: flex; /* para que los elementos se pongan uno al lado del otro */
     justify-content: space-between; /* que se peguen a las esquinas */
     align-items: center; /* que se centren verticalmente */
 }
 
-.hero__logo{
+.menu__logo{ /*medidas del logo */
     width: 45%;
     max-width: 180px;
     min-width: 160px;
@@ -37,35 +97,6 @@
     padding-right: 30px;
 }
 
-.hero__nav ul{
-    display: flex; /* las palabras se pongan una al lado de la otra */
-    font-family: Arial, Helvetica, sans-serif;
-    color: darkblue; /* pintamos las letras de la lista */
-    font-weight: bold; /* engrosamos las letras de la lista */
-    list-style: none; /* quitamos los puntos de la lista */
-}
-
-.hero__nav li{
-    margin-right: 1.5rem; /* separacion entre palabras */
-    text-align: center; /* centrar las palabras seguidas */
-}
-
-.hero__nav li:hover{
-    color: red;
-}
-
-.menu__icon img{
-    width: 40px;
-    height: 40px;
-}
-
-.menu__icon, #check{
-    display: none;
-}
-
-.hero__cta{
-    text-decoration: none;
-}
 
 @media (max-width:968px){
     .checkbtn{
@@ -77,7 +108,7 @@
         top: 40px;
         right: 40px;
     }
-    .hero__nav ul{
+    .menu__nav ul{
         display: block; /* para que se muestre en columna */
         position: fixed;
         top: 130px;
@@ -89,12 +120,13 @@
         right: 0; /* para que se alinee a la derecha */
         color: aqua;
     }
-    .hero__nav ul li {
+    .menu__nav ul li {
         padding: 1.5rem; /* para que haya separacion entre palabras del menu */
         display: flex;
         justify-content: center;
         margin: 0;
     }
+    
     #check:checked ~ ul { /* con el simbolo equivalencia seleccionamos todos los elem que hay dentro del contenedor padre */
         left: 0; /* hacemos que el menu vuelva dentro de la pantalla */
     }
